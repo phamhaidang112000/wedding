@@ -10,7 +10,9 @@
 
 <canvas id="effects"></canvas>
 
-<div class="container">
+<div id="invitation" class="hidden">
+  <!-- toàn bộ web thiệp của bạn -->
+   <div class="container">
 
   <!-- Trang chủ -->
   <section id="home" class="section hero">
@@ -75,14 +77,14 @@
     <p class="time">11:00 - CHỦ NHẬT</p>
 
     <div class="main-date">
-      <strong>25</strong>
+      <strong>29</strong>
       <strong>|</strong>
-      <strong>01</strong>
+      <strong>03</strong>
       <strong>|</strong>
       <strong>2026</strong>
     </div>
 
-    <p class="lunar">( Tức ngày 07 tháng 12 năm Ất Tỵ )</p>
+    <p class="lunar">( Tức ngày 11 tháng 02 năm Bính Ngọ )</p>
 
     <!-- Trang trí cô dâu chú rể -->
     <div class="decor">
@@ -281,25 +283,50 @@
 <div class="lightbox" id="lightbox">
   <img id="lightbox-img">
 </div>
+</div>
+
+
+
+<div id="doorOverlay">
+  <div class="door left"></div>
+  <div class="door right"></div>
+
+  <button id="openBtn">💍 Mở thiệp 💍</button>
+</div>
+
 
 <script src="effects.js"></script>
 <audio id="bgMusic" loop>
   <source src="music/nen.mp3" type="audio/mpeg">
 </audio>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById("bgMusic");
+  const overlay = document.getElementById("doorOverlay");
+  const btn = document.getElementById("openBtn");
+  const music = document.getElementById("bgMusic");
+  const invitation = document.getElementById("invitation");
 
-    const playMusic = () => {
-      music.volume = 0.6; // chỉnh âm lượng nhẹ nhàng
-      music.play().catch(() => {});
-      document.removeEventListener("click", playMusic);
-      document.removeEventListener("touchstart", playMusic);
-    };
+  function openInvitation() {
+    overlay.classList.add("open");
 
-    document.addEventListener("click", playMusic);
-    document.addEventListener("touchstart", playMusic);
-  });
+    // phát nhạc (được phép vì click trực tiếp)
+    music.volume = 0.6;
+    music.play().catch(() => {});
+
+    // sau khi cửa mở xong
+    setTimeout(() => {
+      overlay.style.opacity = "0";
+      overlay.style.transition = "opacity 0.6s ease";
+    }, 1200);
+
+    setTimeout(() => {
+      overlay.remove();
+      invitation.classList.remove("hidden");
+    }, 1800);
+  }
+
+  btn.addEventListener("click", openInvitation);
+  btn.addEventListener("touchstart", openInvitation, { once: true });
 </script>
+
 </body>
 </html>
