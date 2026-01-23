@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh ❤️ Hương Wedding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="effects"></canvas>
+
+<div class="container">
+
+  <!-- Trang chủ -->
+  <section id="home" class="section hero">
+    <h1>Minh ❤️ Hương</h1>
+    <p class="date">25 • 12 • 2026</p>
+    <p>Trân trọng kính mời</p>
+  </section>
+
+  <!-- Câu chuyện tình yêu -->
+  <section class="section reveal">
+    <h2>Câu chuyện tình yêu</h2>
+    <p>
+      Chúng mình gặp nhau vào một ngày rất bình thường,
+      để rồi cùng nhau viết nên một câu chuyện không bình thường 💕
+    </p>
+  </section>
+
+  <!-- Thời gian – địa điểm -->
+  <section class="section reveal">
+    <h2>Thời gian & Địa điểm</h2>
+    <p>⏰ 10:00 sáng – Chủ nhật, 25/12/2026</p>
+    <p>📍 Nhà hàng ABC – TP.HCM</p>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="section map reveal">
+    <iframe
+      src="https://www.google.com/maps?q=Nhà hàng ABC&output=embed"
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section rsvp reveal">
+    <h2>Xác nhận tham dự</h2>
+    <a href="https://forms.gle/xxxx" target="_blank" class="btn">
+      RSVP tại đây
+    </a>
+  </section>
+
+  <!-- Album ảnh -->
+  <section class="section reveal">
+  <h2>Album ảnh</h2>
+
+  <div class="slider">
+    <div class="slides">
+       <img src="images/DSC_3134.JPG">
+        <img src="images/DSC_3397.JPG">
+        <img src="images/DSC_3721.JPG">
+        <img src="images/DSC_3912.JPG">
+
+      <!-- Nhân đôi -->
+       <img src="images/DSC_3134.JPG">
+        <img src="images/DSC_3397.JPG">
+        <img src="images/DSC_3721.JPG">
+        <img src="images/DSC_3912.JPG">
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img">
+</div>
+
+<script src="effects.js"></script>
+</body>
+</html>
