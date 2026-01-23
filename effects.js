@@ -141,3 +141,64 @@ lightbox.addEventListener('click', () => {
   lightbox.classList.remove('show');
 });
 
+
+
+/* =====================
+   COUNTDOWN WEDDING
+===================== */
+const weddingDate = new Date("2026-03-29T00:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+
+  if (diff <= 0) {
+    document.getElementById("days").innerText = "00";
+    document.getElementById("hours").innerText = "00";
+    document.getElementById("minutes").innerText = "00";
+    document.getElementById("seconds").innerText = "00";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("days").innerText = days.toString().padStart(2, "0");
+  document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+  document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+  document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+
+
+
+document.getElementById("rsvpForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const message = document.getElementById("message").value;
+  const attendance = document.querySelector(
+    'input[name="attendance"]:checked'
+  ).value;
+
+  console.log({
+    name,
+    message,
+    attendance
+  });
+
+  alert("Cảm ơn bạn đã xác nhận ❤️");
+
+  this.reset();
+});
+
+
+
+
+
+
