@@ -458,6 +458,11 @@ z-index:0;
   .main-date strong {
     font-size: 40px;
   }
+
+  .decor img {
+    width: 330px;
+    margin: 30px auto;
+  }
 }
 
 
