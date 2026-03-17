@@ -1166,6 +1166,69 @@ animation:pulse 2s infinite;
 
 
 
+.lazy{
+  opacity:0;
+  filter:blur(20px);
+  transform:scale(1.05);
+
+  transition:
+  opacity .8s,
+  filter .8s,
+  transform .8s;
+}
+
+.lazy.loaded{
+  opacity:1;
+  filter:blur(0);
+  transform:scale(1);
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:.9s;
+
+will-change:transform,opacity;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+
+.gallery{
+
+content-visibility:auto;
+
+contain-intrinsic-size:1000px;
+
+}
+
+
+
+
+
 
 
 
